@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0" version="29.3.4" pages="6">
+  <diagram name="Drone Fly Plan Stack" id="ISTUNLIif5VyY_sFHD1v">
+    <mxGraphModel dx="1213" dy="732" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="foQDW0Y53Hq26j0pccA1-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=14;verticalAlign=top" value="WPF Project (.NET 8.0)&#xa;Gestion de l&#39;application &amp; Logique Drone" vertex="1">
+          <mxGeometry height="340" width="560" x="120" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="foQDW0Y53Hq26j0pccA1-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;verticalAlign=top" value="WebView2 Control&#xa;(Navigateur intégré)" vertex="1">
+          <mxGeometry height="240" width="480" x="160" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="foQDW0Y53Hq26j0pccA1-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;verticalAlign=top" value="Leaflet.js (Moteur Graphique)&#xa;Calcul des positions pixels, tracés et marqueurs" vertex="1">
+          <mxGeometry height="150" width="400" x="200" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="foQDW0Y53Hq26j0pccA1-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1" value="OpenStreetMap (Serveur de Tuiles)&#xa;Fournit les images de fond (Maps)" vertex="1">
+          <mxGeometry height="60" width="320" x="240" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="foQDW0Y53Hq26j0pccA1-5" edge="1" parent="1" source="foQDW0Y53Hq26j0pccA1-1" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1.001;entryY=0.547;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;entryPerimeter=0;" target="foQDW0Y53Hq26j0pccA1-3" value="Coordonnées GPS (Lat, Lon)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="70" y="250" />
+              <mxPoint x="70" y="480" />
+              <mxPoint x="720" y="480" />
+              <mxPoint x="720" y="282" />
+            </Array>
+            <mxPoint x="80" y="230" as="sourcePoint" />
+            <mxPoint x="80" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="foQDW0Y53Hq26j0pccA1-6" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#6C8EBF;" value="LOGIQUE C# (Calculs de vol)" vertex="1">
+          <mxGeometry height="30" width="200" x="300" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="foQDW0Y53Hq26j0pccA1-7" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;WebView 2&lt;/h1&gt;&lt;p&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;Bridge | Web - Windows&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p data-path-to-node=&quot;10,1,1,0,0&quot;&gt;Affiche le contenu HTML/JS.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p data-path-to-node=&quot;10,1,1,0,0&quot;&gt;Traduit les coordonnées en provenance de Leaflet (Web | JS) en msg C#&amp;nbsp;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p data-path-to-node=&quot;10,1,1,0,0&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Transmet les clics de souris de la carte vers le C#.&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="160" width="500" x="765" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="foQDW0Y53Hq26j0pccA1-8" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Leaflet&lt;/h1&gt;&lt;p&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;Javascript Web&amp;nbsp;&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p data-path-to-node=&quot;10,2,1,0,0&quot;&gt;&lt;b data-path-to-node=&quot;10,2,1,0,0&quot; data-index-in-node=&quot;0&quot;&gt;Display :&lt;/b&gt; Affiche les marqueurs et les lignes de trajectoire.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p data-path-to-node=&quot;10,2,1,1,0&quot;&gt;&lt;b data-path-to-node=&quot;10,2,1,1,0&quot; data-index-in-node=&quot;0&quot;&gt;Calculs :&lt;/b&gt; Calcule les distances (ex: &lt;code data-path-to-node=&quot;10,2,1,1,0&quot; data-index-in-node=&quot;37&quot;&gt;map.distance(point1, point2)&lt;/code&gt;).&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p data-path-to-node=&quot;10,2,1,2,0&quot;&gt;&lt;b data-path-to-node=&quot;10,2,1,2,0&quot; data-index-in-node=&quot;0&quot;&gt;Interactions :&lt;/b&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Gère le zoom&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Ecoute les clics de souris&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Déplacement de la carte&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="240" width="500" x="760" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="foQDW0Y53Hq26j0pccA1-9" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;WPF (.NET 8.0)&lt;/h1&gt;&lt;p&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;Code Source&lt;/font&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p data-path-to-node=&quot;10,1,1,0,0&quot;&gt;Stockage des données de vol dans une base de données ou un fichier.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p data-path-to-node=&quot;10,1,1,0,0&quot;&gt;&lt;b data-path-to-node=&quot;10,2,1,2,0&quot; data-index-in-node=&quot;0&quot; style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Interactions :&lt;/b&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;b&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Récupère les coordonnées transmises par WebView2 &quot;&lt;/b&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;WebMessageReceived&quot;&lt;/span&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="190" width="520" x="770" y="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="lC3zoKkEQwrdH0lFY5Ux" name="Page-2">
+    <mxGraphModel dx="1213" dy="732" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="y6VRLmYlR-wUVQ3K_reD-43" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1" value="STRATÉGIE ENTREPRISE :&amp;nbsp;&lt;div&gt;POURQUOI LE 100% NATIF C# SUR LE TERRAIN ?&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="700" x="234.5" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="y6VRLmYlR-wUVQ3K_reD-44" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;startSize=50;" value="STRUCTURE HYBRIDE&#xa;(WPF + WebView2 + Leaflet)" vertex="1">
+          <mxGeometry height="520" width="480" x="60" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="y6VRLmYlR-wUVQ3K_reD-45" parent="y6VRLmYlR-wUVQ3K_reD-44" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;align=left;spacingLeft=10;" value="FIABILITÉ DES DONNÉES&lt;br&gt;Passage par un &#39;Bridge&#39; (JSON).&amp;nbsp;&lt;div&gt;Risque de perte de précision lors des conversions de coordonnées.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="440" x="20" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="y6VRLmYlR-wUVQ3K_reD-46" parent="y6VRLmYlR-wUVQ3K_reD-44" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;align=left;spacingLeft=10;" value="GESTION RÉSEAU (OFFLINE)&lt;br&gt;Dépendance aux scripts externes (CDN).&amp;nbsp;&lt;div&gt;La carte peut ne pas s&#39;afficher sans internet.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="440" x="20" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="y6VRLmYlR-wUVQ3K_reD-47" parent="y6VRLmYlR-wUVQ3K_reD-44" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;align=left;spacingLeft=10;" value="ACCÈS MATÉRIEL (HARDWARE)&lt;br&gt;Bloqué par la Sandbox Navigateur.&amp;nbsp;&lt;div&gt;Impossible d&#39;interagir directement avec les ports COM/USB.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="440" x="20" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="y6VRLmYlR-wUVQ3K_reD-48" parent="y6VRLmYlR-wUVQ3K_reD-44" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;align=left;spacingLeft=10;" value="SÉCURITÉ INDUSTRIELLE&lt;br&gt;Code JS/HTML lisible en clair.&amp;nbsp;&lt;div&gt;Difficulté à chiffrer les plans de vol avant l&#39;enregistrement.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="440" x="20" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="y6VRLmYlR-wUVQ3K_reD-49" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;startSize=50;" value="STRUCTURE 100% NATIVE C#&#xa;(WPF + GMap.NET / MapControl.cs)" vertex="1">
+          <mxGeometry height="520" width="480" x="630" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="y6VRLmYlR-wUVQ3K_reD-50" parent="y6VRLmYlR-wUVQ3K_reD-49" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;align=left;spacingLeft=10;" value="PRÉCISION MATHÉMATIQUE&lt;br&gt;Types &#39;double&#39; et &#39;decimal&#39; .NET.&amp;nbsp;&lt;div&gt;Calculs GPS de haute précision sans conversion intermédiaire.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="440" x="20" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="y6VRLmYlR-wUVQ3K_reD-51" parent="y6VRLmYlR-wUVQ3K_reD-49" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;align=left;spacingLeft=10;" value="AUTONOMIE TERRAIN&lt;br&gt;Cache de tuiles local géré par FileService.cs.&amp;nbsp;&lt;div&gt;Fonctionnement garanti 100% Offline.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="440" x="20" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="y6VRLmYlR-wUVQ3K_reD-52" parent="y6VRLmYlR-wUVQ3K_reD-49" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;align=left;spacingLeft=10;" value="PILOTAGE DIRECT&lt;br&gt;Accès natif aux ports COM.&amp;nbsp;&lt;div&gt;Communication temps-réel avec le drone (MAVLink).&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="440" x="20" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="y6VRLmYlR-wUVQ3K_reD-53" parent="y6VRLmYlR-wUVQ3K_reD-49" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;align=left;spacingLeft=10;" value="PROPRIÉTÉ INTELLECTUELLE&lt;br&gt;Code compilé et protégé.&amp;nbsp;&lt;div&gt;Chiffrement AES des missions via ExportService.cs.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="440" x="20" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="y6VRLmYlR-wUVQ3K_reD-54" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=14;" value="SYNTHÈSE : L&#39;approche Native sécurise les calculs GPS via GPSUtils.cs et garantit l&#39;intégrité des fichiers via FileService.cs." vertex="1">
+          <mxGeometry height="60" width="770" x="200" y="660" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="X6kjM_5NWpjzJkFH9H_n" name="Page-3">
+    <mxGraphModel dx="1213" dy="732" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="5_gJKLe66481129LPR18-10" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" value="ANALYSE DÉCISIONNELLE :&amp;nbsp;&lt;div&gt;POURQUOI LE 100% NATIF EST LE SEUL CHOIX VIABLE POUR LE TERRAIN&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="900" x="134.5" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="5_gJKLe66481129LPR18-11" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;startSize=50;" value="STRUCTURE HYBRIDE (Web-Based)&#xa;Risques de conformité et de fiabilité" vertex="1">
+          <mxGeometry height="540" width="480" x="60" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="5_gJKLe66481129LPR18-12" parent="5_gJKLe66481129LPR18-11" style="text;html=1;fontStyle=1;align=center;fontColor=#2D7600" value="AVANTAGES (Interface)" vertex="1">
+          <mxGeometry height="30" width="480" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5_gJKLe66481129LPR18-13" parent="5_gJKLe66481129LPR18-11" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=10;" value="• Rendu visuel moderne et fluide (GPU).&#xa;• Accès aux plugins Web (Météo, Relief)." vertex="1">
+          <mxGeometry height="50" width="440" x="20" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="5_gJKLe66481129LPR18-14" parent="5_gJKLe66481129LPR18-11" style="text;html=1;fontStyle=1;align=center;fontColor=#AE4132" value="DÉSAVANTAGES (Opérations)" vertex="1">
+          <mxGeometry height="30" width="480" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="5_gJKLe66481129LPR18-15" parent="5_gJKLe66481129LPR18-11" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;spacingLeft=10;" value="• Perte de précision lors des conversions de données (C# &lt;-&gt; JSON &lt;-&gt; JS).&#xa;• Dépendance Internet fatale en zone blanche (scripts CDN).&#xa;• Sandbox Web : Pas d&#39;accès direct aux ports USB/COM du drone.&#xa;• Propriété Intellectuelle exposée (Code JS lisible en clair).&#xa;• Maintenance coûteuse (Expert C# + Expert JS requis)." vertex="1">
+          <mxGeometry height="120" width="440" x="20" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="5_gJKLe66481129LPR18-16" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;startSize=50;" value="STRUCTURE 100% NATIVE C#&#xa;Standard industriel pour la sécurité" vertex="1">
+          <mxGeometry height="540" width="480" x="630" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="5_gJKLe66481129LPR18-17" parent="5_gJKLe66481129LPR18-16" style="text;html=1;fontStyle=1;align=center;fontColor=#2D7600" value="AVANTAGES (Terrain &amp; Sécurité)" vertex="1">
+          <mxGeometry height="30" width="480" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5_gJKLe66481129LPR18-18" parent="5_gJKLe66481129LPR18-16" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=10;" value="• Précision absolue : Types &#39;double&#39; .NET sans conversion intermédiaire.&#xa;• Autonomie totale : Cache de cartes local géré par FileService.cs.&#xa;• Pilotage direct : Communication USB/MAVLink native sans barrière.&#xa;• Confidentialité : Code compilé (Protection du savoir-faire).&#xa;• Maintenance unifiée : Un seul langage (C#) pour tout le projet." vertex="1">
+          <mxGeometry height="120" width="440" x="20" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="5_gJKLe66481129LPR18-19" parent="5_gJKLe66481129LPR18-16" style="text;html=1;fontStyle=1;align=center;fontColor=#AE4132" value="DÉSAVANTAGES (Développement)" vertex="1">
+          <mxGeometry height="30" width="480" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="5_gJKLe66481129LPR18-20" parent="5_gJKLe66481129LPR18-16" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;spacingLeft=10;" value="• Interface plus longue à polir graphiquement.&#xa;• Nécessite d&#39;implémenter les maths géodésiques (GPSUtils.cs)." vertex="1">
+          <mxGeometry height="50" width="440" x="20" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="5_gJKLe66481129LPR18-21" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=14;" value="CONCLUSION : Le 100% C# sécurise l&#39;enregistrement via FileService.cs et les calculs via GPSUtils.cs." vertex="1">
+          <mxGeometry height="60" width="870" x="150" y="680" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="SR8lQW3q1d7cCtIEIjdD" name="Page-4">
+    <mxGraphModel dx="1011" dy="610" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="eOEzwqS2Ejk2fJz6A632-1" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="BASE DE DONNÉES&#xa;(MySQL Docker)" vertex="1">
+          <mxGeometry height="150" width="120" x="40" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="eOEzwqS2Ejk2fJz6A632-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="BACK-END API&#xa;(.NET 9.0)" vertex="1">
+          <mxGeometry height="150" width="160" x="330" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="eOEzwqS2Ejk2fJz6A632-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="APP MOBILE&#xa;(MAUI Android)" vertex="1">
+          <mxGeometry height="150" width="160" x="610" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="eOEzwqS2Ejk2fJz6A632-4" edge="1" parent="1" source="eOEzwqS2Ejk2fJz6A632-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" value="1. SELECT EpubContent&#xa;(LONGBLOB)">
+          <mxGeometry relative="1" x="-0.0588" y="-20" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="160" y="150" />
+            </Array>
+            <mxPoint x="160" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eOEzwqS2Ejk2fJz6A632-5" edge="1" parent="1" source="eOEzwqS2Ejk2fJz6A632-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;exitPerimeter=0;" target="eOEzwqS2Ejk2fJz6A632-2" value="2. Retourne byte[]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="230" y="193" />
+              <mxPoint x="230" y="193" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eOEzwqS2Ejk2fJz6A632-6" edge="1" parent="1" source="eOEzwqS2Ejk2fJz6A632-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="eOEzwqS2Ejk2fJz6A632-3" value="3. FileStreamResult&#xa;(Stream binaire)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eOEzwqS2Ejk2fJz6A632-7" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;" value="STOCKAGE LOCAL&#xa;(FileSystem.Cache)" vertex="1">
+          <mxGeometry height="100" width="130" x="625" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="eOEzwqS2Ejk2fJz6A632-8" edge="1" parent="1" source="eOEzwqS2Ejk2fJz6A632-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="eOEzwqS2Ejk2fJz6A632-7" value="4. WriteAllBytesAsync&#xa;(temp.epub)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="QQon8A0X-Ns-CG8MX_sm" name="Global_Schema">
+    <mxGraphModel dx="1427" dy="861" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="_5rjFdDHJcmpTTI-HDNS-1" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;MySQL (Docker)&lt;/b&gt;&lt;br&gt;Type: LONGBLOB (4Go)&lt;br&gt;Conf: max_allowed_packet=64M" vertex="1">
+          <mxGeometry height="200" width="180" x="20" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="_5rjFdDHJcmpTTI-HDNS-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;spacingTop=10" value="&lt;b&gt;Backend .NET 9.0&lt;/b&gt;&lt;br&gt;Entity Framework Core" vertex="1">
+          <mxGeometry height="220" width="220" x="320" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="_5rjFdDHJcmpTTI-HDNS-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;verticalAlign=top;spacingTop=10" value="&lt;b&gt;MAUI Android App&lt;/b&gt;&lt;br&gt;Emulator local" vertex="1">
+          <mxGeometry height="200" width="220" x="710" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="_5rjFdDHJcmpTTI-HDNS-4" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" value="1. GetBook(id)&#xa;2. return File(blob, &#39;epub/zip&#39;)" vertex="1">
+          <mxGeometry height="60" width="200" x="330" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="_5rjFdDHJcmpTTI-HDNS-5" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" value="1. HttpClient.GetStreamAsync()&lt;br&gt;2. File.WriteAllBytesAsync()&lt;br&gt;3. WebView.Source = TempPath&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12px; text-align: center;&quot;&gt;Storage: FileSystem.Cache&lt;/span&gt;&lt;br style=&quot;font-size: 12px; text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 12px; text-align: center;&quot;&gt;Func: WriteAllBytes()&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="710" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="_5rjFdDHJcmpTTI-HDNS-6" edge="1" parent="1" source="_5rjFdDHJcmpTTI-HDNS-2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="_5rjFdDHJcmpTTI-HDNS-1" value="SQL Query&#xa;Binary Stream">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_5rjFdDHJcmpTTI-HDNS-7" edge="1" parent="1" source="_5rjFdDHJcmpTTI-HDNS-2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="_5rjFdDHJcmpTTI-HDNS-3" value="HTTP GET /api/book/1&lt;br&gt;Octet-Stream Response&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;HTTP POST /api/addtag/&lt;/div&gt;">
+          <mxGeometry relative="1" x="0.0588" y="60" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_5rjFdDHJcmpTTI-HDNS-8" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" value="&lt;b&gt;Fichier EPUB Local&lt;/b&gt;&lt;br&gt;/data/user/0/.../cache/temp.epub" vertex="1">
+          <mxGeometry height="100" width="150" x="745" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="_5rjFdDHJcmpTTI-HDNS-9" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="_5rjFdDHJcmpTTI-HDNS-8" value="Persistance Temporaire">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="820" y="410" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5UZQR25eBAsZfI9z_Ymj-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;b&gt;API .NET 9.0&lt;/b&gt;&lt;br&gt;Func: FileStreamResult&lt;br&gt;Type: byte[]" vertex="1">
+          <mxGeometry height="80" width="180" x="340" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="5UZQR25eBAsZfI9z_Ymj-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="SWAGGER" vertex="1">
+          <mxGeometry height="30" width="90" x="385" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="5UZQR25eBAsZfI9z_Ymj-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;API&amp;nbsp;&lt;/font&gt;&lt;/b&gt;&lt;div&gt;- BLOB accessible&lt;/div&gt;&lt;div&gt;-&amp;nbsp;&lt;span style=&quot;background-color: transparent;&quot;&gt;afficher les détails du livre dans l&#39;API&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="210" x="325" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="5UZQR25eBAsZfI9z_Ymj-6" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" value="&lt;b&gt;Fichier EPUB Local&lt;/b&gt;&lt;br&gt;/EPUB/books" vertex="1">
+          <mxGeometry height="100" width="150" x="1097.4" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="5UZQR25eBAsZfI9z_Ymj-7" edge="1" parent="1" source="5UZQR25eBAsZfI9z_Ymj-6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=-0.024;exitY=0.43;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.013;entryY=0.369;entryDx=0;entryDy=0;entryPerimeter=0;" value="EPUB Insertion">
+          <mxGeometry relative="1" x="0.0246" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points" />
+            <mxPoint x="1192.4" y="258.56" as="sourcePoint" />
+            <mxPoint x="929.9999999999999" y="312.1400000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5UZQR25eBAsZfI9z_Ymj-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 16px;&quot;&gt;&lt;b&gt;PROJET PASSION&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 16px;&quot;&gt;&lt;b&gt;LECTURE&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="210" x="325" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="5UZQR25eBAsZfI9z_Ymj-10" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Parcours EPUB Démarrage Fichier Local&amp;nbsp;&lt;/span&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 12px; font-weight: normal;&quot;&gt;Local : /EPUB/books&amp;nbsp;&lt;/span&gt;&lt;/h1&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 12px; font-weight: normal;&quot;&gt;1) Intégration sur MAUI Android App.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 12px; font-weight: normal;&quot;&gt;2) Ajout dans Back-End&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 12px; font-weight: normal;&quot;&gt;3) Ajout dans MySQL Database&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="170" width="580" x="60" y="650" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="-VRp5CyNg8BJidHj8X0-" name="Page-6">
+    <mxGraphModel dx="2913" dy="1832" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="YThwii6i1ZRYaGohGj3Y-1" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;MySQL (Docker)&lt;/b&gt;&lt;br&gt;Type: LONGBLOB (4Go)&lt;br&gt;CMD: LOAD_FILE()" vertex="1">
+          <mxGeometry height="180" width="160" x="40" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="YThwii6i1ZRYaGohGj3Y-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;b&gt;API .NET 9.0&lt;/b&gt;&lt;br&gt;Func: FileStreamResult&lt;br&gt;Type: byte[]" vertex="1">
+          <mxGeometry height="180" width="180" x="320" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="YThwii6i1ZRYaGohGj3Y-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="&lt;b&gt;MAUI App&lt;/b&gt;&lt;br&gt;Storage: FileSystem.Cache&lt;br&gt;Func: WriteAllBytes()" vertex="1">
+          <mxGeometry height="180" width="180" x="600" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="YThwii6i1ZRYaGohGj3Y-4" edge="1" parent="1" source="YThwii6i1ZRYaGohGj3Y-1" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="YThwii6i1ZRYaGohGj3Y-2" value="SQL Binary" />
+        <mxCell id="YThwii6i1ZRYaGohGj3Y-5" edge="1" parent="1" source="YThwii6i1ZRYaGohGj3Y-2" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="YThwii6i1ZRYaGohGj3Y-3" value="HTTP Stream" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
