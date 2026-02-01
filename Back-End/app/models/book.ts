@@ -18,23 +18,26 @@ export default class Book extends BaseModel {
   declare numberOfPages: number
 
   @column()
+  declare epubBlob: BinaryData
+
+  @column()
   declare pdfLink: string
 
   //résumé du livre
-  @column() 
+  @column()
   declare abstract: string
 
-  @column() 
+  @column()
   declare editor: string
 
   //number = Small Int
-  @column() 
+  @column()
   declare editionYear: number
 
-  @column() 
+  @column()
   declare imagePath: string
 
-  //Récupération des 3 clefs étrangères 
+  //Récupération des 3 clefs étrangères
   @column()
   declare categoryId: number | null
 
@@ -45,16 +48,16 @@ export default class Book extends BaseModel {
   declare userId: number | null
 
   //Assignation des clefs étrangères à book
-  @belongsTo(()=> Category)
+  @belongsTo(() => Category)
   declare category: BelongsTo<typeof Category>
 
-  @belongsTo(()=> Writer)
+  @belongsTo(() => Writer)
   declare writer: BelongsTo<typeof Writer>
 
-  @belongsTo(()=> User)
+  @belongsTo(() => User)
   declare user: BelongsTo<typeof User>
 
-  @hasMany(()=> Comment)
+  @hasMany(() => Comment)
   declare comment: HasMany<typeof Comment>
 
   @column.dateTime({ autoCreate: true })
