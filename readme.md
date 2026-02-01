@@ -39,9 +39,10 @@ Ce document synthétise le flux de transformation des données binaires, de la b
 Le flux binaire est écrit sur le disque local via File.WriteAllBytesAsync() dans le dossier FileSystem.CacheDirectory.
 
 ## Schéma Récapitulatif Principal :
-<img width="1229" height="693" alt="Final_Structure" src="https://github.com/user-attachments/assets/3c939c99-7e6f-4637-bdb7-ab190914e456" />
+<img width="800" height="356" alt="Official_schema" src="https://github.com/user-attachments/assets/adeef697-1bd4-4c61-9684-6510e38dccc7" />
 
 ## Flux de Lecture LONGBLOB : 
 <img width="844" height="507" alt="READING_LONGBLOB" src="https://github.com/user-attachments/assets/f7b8629b-f1b8-427e-9e60-79442645fb20" />
+
 
 
