@@ -55,6 +55,10 @@ Le flux binaire est écrit sur le disque local via File.WriteAllBytesAsync() dan
 
 * **Configuration du schéma :** Définition de la structure de la table via l'outil de migration d'AdonisJS pour réserver un emplacement de stockage binaire haute capacité dédié aux fichiers.
   * **Typage TypeScript :** Utilisation du type `Uint8Array` pour la propriété `epubBlob` afin d'assurer une compatibilité parfaite entre les données binaires de la base et l'application.
+ 
+  * * **Validation pré-insertion :** Le Seeder effectue un contrôle de présence physique du fichier source sur le disque avant toute interaction avec la base de données.
+  * **Vérification d'unicité :** Une requête de contrôle est exécutée pour s'assurer que l'ouvrage n'est pas déjà référencé, garantissant l'absence de doublons binaires.
+  * **Gestion d'erreurs :** En cas de fichier corrompu ou manquant, le script interrompt le processus de manière sécurisée pour préserver la cohérence des relations entre les tables.
 * **Synchronisation logicielle :** Liaison de la propriété de données avec le moteur d'AdonisJS pour permettre la manipulation et la lecture fluide des fichiers par l'application.
 * **Initialisation automatique :** Utilisation du seeder intégré pour injecter les fichiers par défaut en base de données afin de rendre le projet immédiatement opérationnel.
 
@@ -63,6 +67,7 @@ Le flux binaire est écrit sur le disque local via File.WriteAllBytesAsync() dan
 * **Sélection du fichier :** Utilisation de l'explorateur natif du système via un sélecteur de fichiers pour permettre à l'utilisateur de choisir un ouvrage ePub sur son appareil.
 * **Traitement local :** Conversion du fichier sélectionné en flux binaire par l'application pour préparer son transfert vers le serveur.
 * **Transmission au Backend :** Envoi sécurisé des données vers l'API via une requête réseau pour confirmer l'importation et le stockage final.
+
 
 
 
