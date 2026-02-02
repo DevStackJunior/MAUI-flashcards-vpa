@@ -50,7 +50,7 @@ Le flux binaire est écrit sur le disque local via File.WriteAllBytesAsync() dan
 
 ---
 
-## 1. Importation epubs
+## 1. Importation epubs (LONGBLOB)
 ### Initialisation Projet
 
 * **Configuration du schéma :** Définition de la structure de la table via l'outil de migration d'AdonisJS pour réserver un emplacement de stockage binaire haute capacité dédié aux fichiers.
@@ -71,6 +71,7 @@ Le flux binaire est écrit sur le disque local via File.WriteAllBytesAsync() dan
 * **Sélection du fichier :** Utilisation de l'explorateur natif du système via un sélecteur de fichiers pour permettre à l'utilisateur de choisir un ouvrage ePub sur son appareil.
 * **Traitement local :** Conversion du fichier sélectionné en flux binaire par l'application pour préparer son transfert vers le serveur.
 * **Transmission au Backend :** Envoi sécurisé des données vers l'API via une requête réseau pour confirmer l'importation et le stockage final.
+
 
 
 
