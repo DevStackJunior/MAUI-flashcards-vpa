@@ -16,10 +16,6 @@ Ce document synthétise le flux de transformation des données binaires, de la b
 
 ---
 
-[https://gemini.google.com/app/04377331fdb27f92] (Détails Projet)
-
----
-
 ## Détails Techniques par Composant
 
 ### 1. Database (MySQL)
@@ -71,6 +67,7 @@ Le flux binaire est écrit sur le disque local via File.WriteAllBytesAsync() dan
 * **Sélection du fichier :** Utilisation de l'explorateur natif du système via un sélecteur de fichiers pour permettre à l'utilisateur de choisir un ouvrage ePub sur son appareil.
 * **Traitement local :** Conversion du fichier sélectionné en flux binaire par l'application pour préparer son transfert vers le serveur.
 * **Transmission au Backend :** Envoi sécurisé des données vers l'API via une requête réseau pour confirmer l'importation et le stockage final.
+
 
 
 
