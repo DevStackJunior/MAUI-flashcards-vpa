@@ -6,13 +6,13 @@ Ce document synthétise le flux de transformation des données binaires, de la b
 
 ## Synthèse du Flux de Données
 
-| Étape            | État de la donnée   | Composant          | Action clé                              | Data Format        |
-| :--------------- | :------------------ | :----------------- | :-------------------------------------- | :----------------- |
-| **Stockage**     | Fichier Binaire     | **MySQL**          | `LONGBLOB` + `LOAD_FILE`                | Binary Array       |
-| **Transit 1**    | Buffer Node.js      | **AdonisJS API**   | `response.send(blobData)`               | Uint8Array         |
-| **Transit 2**    | Flux HTTP (Stream)  | **Réseau**         | Transfert par paquets vers MAUI         |                    |
-| **Localisation** | Fichier .epub local | **MAUI (Android)** | `WriteAllBytes` dans le Cache           |                    |
-| **Affichage**    | Texte / Images      | **MAUI (UI)**      | Lecture du fichier local par la liseuse |                    |
+| Étape            | État de la donnée   | Composant          | Action clé                              | Data Format        | Data Conversion Procedure       |
+| :--------------- | :------------------ | :----------------- | :-------------------------------------- | :----------------- |:--------------------------------|
+| **Stockage**     | Fichier Binaire     | **MySQL**          | `LONGBLOB` + `LOAD_FILE`                | Binary Array       |                                 |
+| **Transit 1**    | Buffer Node.js      | **AdonisJS API**   | `response.send(blobData)`               | Uint8Array         | Lucid ORM (Implicit Conversion) |
+| **Transit 2**    | Flux HTTP (Stream)  | **Réseau**         | Transfert par paquets vers MAUI         |                    |                                 |
+| **Localisation** | Fichier .epub local | **MAUI (Android)** | `WriteAllBytes` dans le Cache           |                    |                                 |
+| **Affichage**    | Texte / Images      | **MAUI (UI)**      | Lecture du fichier local par la liseuse |                    |                                 |
 
 ---
 
@@ -63,5 +63,6 @@ Le flux binaire est écrit sur le disque local via File.WriteAllBytesAsync() dan
 * **Sélection du fichier :** Utilisation de l'explorateur natif du système via un sélecteur de fichiers pour permettre à l'utilisateur de choisir un ouvrage ePub sur son appareil.
 * **Traitement local :** Conversion du fichier sélectionné en flux binaire par l'application pour préparer son transfert vers le serveur.
 * **Transmission au Backend :** Envoi sécurisé des données vers l'API via une requête réseau pour confirmer l'importation et le stockage final.
+
 
 
