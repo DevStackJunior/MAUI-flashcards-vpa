@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fluent="clr-namespace:MauiIcons.Fluent;assembly=MauiIcons.Fluent"
+             xmlns:views="clr-namespace:MAUI_Flashcards_vpa.Views"
+             x:Class="MAUI_Flashcards_vpa.Pages.Tags"
+             BackgroundColor="#F4F5F9">
+
+    <ContentPage.Resources>
+        <Color x:Key="Purple1">#6F3FF5</Color>
+        <Color x:Key="Purple2">#8A2BE2</Color>
+        <Color x:Key="CardStroke">#EEF0F6</Color>
+        <Color x:Key="MutedText">#6B7280</Color>
+        <Color x:Key="TitleText">#111827</Color>
+
+        <Shadow x:Key="CardShadow"
+                Brush="#24000000"
+                Offset="0,6"
+                Radius="14"
+                Opacity="1" />
+
+        <Shadow x:Key="FabShadow"
+                Brush="#3A000000"
+                Offset="0,8"
+                Radius="18"
+                Opacity="1" />
+
+        <Style x:Key="H2" TargetType="Label">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="#2A2A2A" />
+        </Style>
+
+        <Style x:Key="Caption" TargetType="Label">
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="TextColor" Value="{StaticResource MutedText}" />
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="Auto,*,Auto">
+
+        <Border Grid.Row="0"
+                StrokeShape="RoundRectangle 0,0,26,26"
+                Padding="0"
+                HeightRequest="120">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="{StaticResource Purple1}" Offset="0" />
+                    <GradientStop Color="{StaticResource Purple2}" Offset="1" />
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid Padding="18,18">
+                <VerticalStackLayout Spacing="4"
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Center">
+                    <Label Text="Tags List"
+                           TextColor="White"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center" />
+                    <Label Text="STATUS"
+                           TextColor="#E9E2FF"
+                           FontSize="12"
+                           HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
+            </Grid>
+        </Border>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="18,16" Spacing="14">
+
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="Tag N°1 | { Favorites }"
+                           FontSize="14"
+                           FontAttributes="Bold"
+                           TextColor="{StaticResource TitleText}" />
+                    <Label Text="Tag's description"
+                           Style="{StaticResource Caption}" />
+                </VerticalStackLayout>
+                
+                <Grid ColumnDefinitions="*,*"
+                      RowDefinitions="Auto,Auto"
+                      ColumnSpacing="14"
+                      RowSpacing="14">
+
+                    <Border Grid.Row="0" Grid.Column="0"
+                            BackgroundColor="White"
+                            Stroke="{StaticResource CardStroke}"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 18"
+                            Padding="12"
+                            Shadow="{StaticResource CardShadow}">
+                        <VerticalStackLayout Spacing="12">
+                            <Border BackgroundColor="#E8ECFF"
+                                    Stroke="#D9DFFF"
+                                    StrokeThickness="1"
+                                    StrokeShape="RoundRectangle 16"
+                                    HeightRequest="110" />
+
+                            <VerticalStackLayout Spacing="2" Padding="4,0,4,4">
+                                <Label Text="Book Title"
+                                       FontSize="12"
+                                       FontAttributes="Bold"
+                                       TextColor="{StaticResource TitleText}" />
+                                <Label Text="Author"
+                                       FontSize="11"
+                                       TextColor="{StaticResource MutedText}" />
+                                <Label Text="Date"
+                                       FontSize="11"
+                                       TextColor="{StaticResource MutedText}" />
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Border Grid.Row="0" Grid.Column="1"
+                            BackgroundColor="White"
+                            Stroke="{StaticResource CardStroke}"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 18"
+                            Padding="12"
+                            Shadow="{StaticResource CardShadow}">
+                        <VerticalStackLayout Spacing="12">
+                            <Border BackgroundColor="#E8ECFF"
+                                    Stroke="#D9DFFF"
+                                    StrokeThickness="1"
+                                    StrokeShape="RoundRectangle 16"
+                                    HeightRequest="110" />
+
+                            <VerticalStackLayout Spacing="2" Padding="4,0,4,4">
+                                <Label Text="Book Title"
+                                       FontSize="12"
+                                       FontAttributes="Bold"
+                                       TextColor="{StaticResource TitleText}" />
+                                <Label Text="Author"
+                                       FontSize="11"
+                                       TextColor="{StaticResource MutedText}" />
+                                <Label Text="Date"
+                                       FontSize="11"
+                                       TextColor="{StaticResource MutedText}" />
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Border Grid.Row="1" Grid.Column="0"
+                            BackgroundColor="White"
+                            Stroke="{StaticResource CardStroke}"
+                            StrokeThickness="1"
+                            StrokeShape="RoundRectangle 18"
+                            Padding="12"
+                            Shadow="{StaticResource CardShadow}">
+                        <VerticalStackLayout Spacing="12">
+                            <Border BackgroundColor="#E8ECFF"
+                                    Stroke="#D9DFFF"
+                                    StrokeThickness="1"
+                                    StrokeShape="RoundRectangle 16"
+                                    HeightRequest="110" />
+
+                            <VerticalStackLayout Spacing="2" Padding="4,0,4,4">
+                                <Label Text="Book Title"
+                                       FontSize="12"
+                                       FontAttributes="Bold"
+                                       TextColor="{StaticResource TitleText}" />
+                                <Label Text="Author"
+                                       FontSize="11"
+                                       TextColor="{StaticResource MutedText}" />
+                                <Label Text="Date"
+                                       FontSize="11"
+                                       TextColor="{StaticResource MutedText}" />
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <BoxView Grid.Row="1" Grid.Column="1" Opacity="0" />
+                </Grid>
+
+                <VerticalStackLayout Spacing="6" Margin="0,6,0,0">
+                    <Label Text="Tag N°2"
+                           FontSize="14"
+                           FontAttributes="Bold"
+                           TextColor="{StaticResource TitleText}" />
+                    <Label Text="Tag's description"
+                           Style="{StaticResource Caption}" />
+                </VerticalStackLayout>
+
+                <BoxView HeightRequest="30" Opacity="0"/>
+            </VerticalStackLayout>
+        </ScrollView>
+        
+        <views:BottomNavigation Grid.Row="2" />
+
+    </Grid>
+</ContentPage>

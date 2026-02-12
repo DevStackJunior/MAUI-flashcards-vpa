@@ -1,0 +1,85 @@
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="Architecture_Liaison_Android" name="Architecture Detaillee">
+    <mxGraphModel dx="1422" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <mxCell id="PC_WIN" value="PC WINDOWS : DOSSIER PROJET" style="swimlane;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;startSize=23;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="400" height="660" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="SRC" value="&lt;b&gt;1. CODE SOURCE C#&lt;/b&gt;&lt;br&gt;Projet Actuel + Références&lt;br&gt;(Logic &amp;amp; UI)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="PC_WIN">
+          <mxGeometry x="100" y="40" width="200" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="CSPROJ" value="&lt;b&gt;2. FICHIER .CSPROJ&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#ff0000&quot;&gt;ApplicationId (com.app.test)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="PC_WIN">
+          <mxGeometry x="100" y="130" width="200" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="SDK" value="&lt;b&gt;3. SDK ANDROID (Moteur)&lt;/b&gt;&lt;br&gt;ANDROID_HOME=%cd%\sdk &lt;br&gt;Outils: aapt2, javac, d8" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="PC_WIN">
+          <mxGeometry x="100" y="220" width="200" height="70" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="OBJ" value="&lt;b&gt;DOSSIER [obj]&lt;/b&gt;&lt;br&gt;Cache de Transformation&lt;br&gt;Stubs Java &amp;amp; Métadonnées&lt;br&gt;&lt;i&gt;(Lieu de l'erreur MAX_PATH)&lt;/i&gt;" style="shape=folder;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="PC_WIN">
+          <mxGeometry x="40" y="340" width="150" height="100" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="BIN" value="&lt;b&gt;DOSSIER [bin]&lt;/b&gt;&lt;br&gt;Sortie Finale&lt;br&gt;Fichier .APK (Le Colis)" style="shape=folder;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="PC_WIN">
+          <mxGeometry x="210" y="340" width="150" height="100" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="ADB" value="&lt;b&gt;4. LE PONT ADB&lt;/b&gt;&lt;br&gt;Liaison via l'ID du projet&lt;br&gt;(Vérifie l'identité du colis)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="PC_WIN">
+          <mxGeometry x="100" y="490" width="200" height="130" as="geometry" />
+        </mxCell>
+
+        <mxCell id="EMU_ZONE" value="ÉMULATEUR : MÉMOIRE VIRTUELLE" style="swimlane;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;startSize=23;" vertex="1" parent="1">
+          <mxGeometry x="520" y="40" width="280" height="660" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="RAM" value="Pixel_7a_API_34 &lt;br&gt;(Instance en cours)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="EMU_ZONE">
+          <mxGeometry x="40" y="40" width="200" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="STORAGE" value="&lt;b&gt;5. INSTALLATION&lt;/b&gt;&lt;br&gt;Dossier .android [cite: 1, 2]&lt;br&gt;/data/app/[ID]/&lt;br&gt;&lt;br&gt;&lt;i&gt;Stockage Persistant&lt;/i&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#e3c800;strokeColor=#B09500;fontColor=#000000;" vertex="1" parent="EMU_ZONE">
+          <mxGeometry x="65" y="180" width="150" height="180" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="ID_KEY" value="&lt;b&gt;CLÉ UNIQUE&lt;/b&gt;&lt;br&gt;com.app.test" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="EMU_ZONE">
+          <mxGeometry x="90" y="490" width="100" height="130" as="geometry" />
+        </mxCell>
+
+        <mxCell id="L1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="SRC" target="CSPROJ">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="L2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CSPROJ" target="SDK">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="L3" value="Build" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="SDK" target="OBJ">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="L4" value="Package" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="SDK" target="BIN">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="L5" value="Envoi APK" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="BIN" target="ADB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="L6" value="Liaison Logique ID" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;fontColor=#FF0000;" edge="1" parent="1" source="CSPROJ" target="ID_KEY">
+          <mxGeometry x="-0.7161" y="20" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="480" y="170" />
+              <mxPoint x="480" y="595" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="L7" value="Déploiement" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;" edge="1" parent="1" source="ADB" target="ID_KEY">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="L8" value="Persistence" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="ID_KEY" target="STORAGE">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

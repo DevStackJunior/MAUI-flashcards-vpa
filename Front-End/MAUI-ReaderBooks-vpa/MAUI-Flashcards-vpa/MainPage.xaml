@@ -1,0 +1,424 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fluent="clr-namespace:MauiIcons.Fluent;assembly=MauiIcons.Fluent"
+             xmlns:views="clr-namespace:MAUI_Flashcards_vpa.Views"
+             x:Class="MAUI_Flashcards_vpa.MainPage"
+             BackgroundColor="#F4F5F9">
+
+    <ContentPage.Resources>
+        <Color x:Key="Purple1">#6F3FF5</Color>
+        <Color x:Key="Purple2">#8A2BE2</Color>
+        <Color x:Key="CardStroke">#EEF0F6</Color>
+        <Color x:Key="MutedText">#6B7280</Color>
+        <Color x:Key="TitleText">#111827</Color>
+
+        <Shadow x:Key="CardShadow"
+                Brush="#24000000"
+                Offset="0,6"
+                Radius="14"
+                Opacity="1" />
+
+        <Shadow x:Key="FabShadow"
+                Brush="#3A000000"
+                Offset="0,8"
+                Radius="18"
+                Opacity="1" />
+
+        <Style x:Key="SectionCardStyle" TargetType="Border">
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="Stroke" Value="{StaticResource CardStroke}" />
+            <Setter Property="StrokeThickness" Value="1" />
+            <Setter Property="StrokeShape" Value="RoundRectangle 18" />
+            <Setter Property="Padding" Value="16" />
+            <Setter Property="Shadow" Value="{StaticResource CardShadow}" />
+        </Style>
+
+        <Style x:Key="PillStyle" TargetType="Border">
+            <Setter Property="BackgroundColor" Value="#EEF2FF" />
+            <Setter Property="Stroke" Value="Transparent" />
+            <Setter Property="StrokeShape" Value="RoundRectangle 16" />
+            <Setter Property="Padding" Value="14,12" />
+        </Style>
+
+        <Style x:Key="H2" TargetType="Label">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="#2A2A2A" />
+        </Style>
+
+        <Style x:Key="Caption" TargetType="Label">
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="TextColor" Value="{StaticResource MutedText}" />
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="Auto,*,Auto,Auto">
+
+        <Border Grid.Row="0"
+                StrokeShape="RoundRectangle 0,0,26,26"
+                Padding="0"
+                HeightRequest="110">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="{StaticResource Purple1}" Offset="0" />
+                    <GradientStop Color="{StaticResource Purple2}" Offset="1" />
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid Padding="18,18">
+                <VerticalStackLayout Spacing="2" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label Text="Home"
+                           TextColor="White"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center" />
+                    <Label Text="Every Book Displayed"
+                           TextColor="#E9E2FF"
+                           FontSize="12"
+                           HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
+            </Grid>
+        </Border>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="18,16" Spacing="14">
+
+                <Border Style="{StaticResource SectionCardStyle}">
+                    <VerticalStackLayout Spacing="14">
+
+                        <Grid ColumnDefinitions="*,Auto" VerticalOptions="Center">
+                            <Label Text="Tags Activity" Style="{StaticResource H2}" />
+
+                            <HorizontalStackLayout Grid.Column="1" Spacing="6" VerticalOptions="Center">
+                                <Label Text="{fluent:Fluent Icon=Wifi120}"
+                                       FontSize="16"
+                                       TextColor="#16A34A"
+                                       VerticalTextAlignment="Center" />
+                                <Label Text="Active" FontSize="12" TextColor="#16A34A"/>
+                            </HorizontalStackLayout>
+                        </Grid>
+
+                        <Grid ColumnDefinitions="*,*" ColumnSpacing="14">
+                            <Border BackgroundColor="#F3F6FF"
+                                    Stroke="#EEF0F6"
+                                    StrokeThickness="1"
+                                    StrokeShape="RoundRectangle 16"
+                                    Padding="14">
+                                <VerticalStackLayout Spacing="10">
+                                    <HorizontalStackLayout Spacing="8" VerticalOptions="Center">
+                                        <Ellipse WidthRequest="10" HeightRequest="10" Fill="#2563EB"/>
+                                        <Label Text="Favorites" FontSize="12" TextColor="#4B5563"/>
+                                    </HorizontalStackLayout>
+
+                                    <Label Text="75%"
+                                           FontSize="18"
+                                           FontAttributes="Bold"
+                                           TextColor="{StaticResource TitleText}" />
+
+                                    <Grid HeightRequest="6">
+                                        <Border BackgroundColor="#DDE6FF"
+                                                StrokeShape="RoundRectangle 999"
+                                                HeightRequest="6"/>
+                                        <Border BackgroundColor="#2563EB"
+                                                StrokeShape="RoundRectangle 999"
+                                                HeightRequest="6"
+                                                HorizontalOptions="Start"
+                                                WidthRequest="116"/>
+                                    </Grid>
+                                </VerticalStackLayout>
+                            </Border>
+
+                            <Border Grid.Column="1"
+                                    BackgroundColor="#EFFFFA"
+                                    Stroke="#EEF0F6"
+                                    StrokeThickness="1"
+                                    StrokeShape="RoundRectangle 16"
+                                    Padding="14">
+                                <VerticalStackLayout Spacing="10">
+                                    <HorizontalStackLayout Spacing="8" VerticalOptions="Center">
+                                        <Label Text="{fluent:Fluent Icon=Timer32}"
+                                               FontSize="16"
+                                               TextColor="#0EA5A8"
+                                               VerticalTextAlignment="Center" />
+                                        <Label Text="Tag 2" FontSize="12" TextColor="#4B5563"/>
+                                    </HorizontalStackLayout>
+
+                                    <Label Text="60%"
+                                           FontSize="18"
+                                           FontAttributes="Bold"
+                                           TextColor="{StaticResource TitleText}" />
+
+                                    <Grid HeightRequest="6">
+                                        <Border BackgroundColor="#DDF7F4"
+                                                StrokeShape="RoundRectangle 999"
+                                                HeightRequest="6"/>
+                                        <Border BackgroundColor="#0EA5A8"
+                                                StrokeShape="RoundRectangle 999"
+                                                HeightRequest="6"
+                                                HorizontalOptions="Start"
+                                                WidthRequest="92"/>
+                                    </Grid>
+                                </VerticalStackLayout>
+                            </Border>
+
+                        </Grid>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border Style="{StaticResource SectionCardStyle}">
+                    <VerticalStackLayout Spacing="14">
+
+                        <Grid ColumnDefinitions="*,Auto">
+                            <Label Text="Filters" Style="{StaticResource H2}" />
+
+                            <Border Grid.Column="1"
+                                    BackgroundColor="{StaticResource Purple1}"
+                                    StrokeShape="RoundRectangle 12"
+                                    Padding="10"
+                                    WidthRequest="40"
+                                    HeightRequest="40">
+                                <Label Text="{fluent:Fluent Icon=Add24}"
+                                       FontSize="18"
+                                       TextColor="White"
+                                       HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center" />
+                            </Border>
+                        </Grid>
+
+                        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto"
+                              RowSpacing="12" ColumnSpacing="14">
+
+                            <Border Grid.Row="0" Grid.Column="0" Style="{StaticResource PillStyle}">
+                                <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                                    <Label Text="{fluent:Fluent Icon=Heart28}"
+                                           FontSize="16"
+                                           TextColor="{StaticResource Purple1}"
+                                           VerticalTextAlignment="Center"/>
+                                    <Label Text="Favorites" TextColor="#4B5563" FontSize="12"/>
+                                </HorizontalStackLayout>
+                            </Border>
+
+                            <Border Grid.Row="0" Grid.Column="1" Style="{StaticResource PillStyle}">
+                                <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                                    <Label Text="{fluent:Fluent Icon=Book24}"
+                                           FontSize="16"
+                                           TextColor="{StaticResource Purple1}"
+                                           VerticalTextAlignment="Center"/>
+                                    <Label Text="Historical" TextColor="#4B5563" FontSize="12"/>
+                                </HorizontalStackLayout>
+                            </Border>
+
+                            <Border Grid.Row="1" Grid.Column="0" Style="{StaticResource PillStyle}">
+                                <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                                    <Label Text="{fluent:Fluent Icon=Star24}"
+                                           FontSize="16"
+                                           TextColor="{StaticResource Purple1}"
+                                           VerticalTextAlignment="Center"/>
+                                    <Label Text="Must Read" TextColor="#4B5563" FontSize="12"/>
+                                </HorizontalStackLayout>
+                            </Border>
+
+                            <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource PillStyle}">
+                                <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                                    <Label Text="{fluent:Fluent Icon=ArrowRepeatAll24}"
+                                           FontSize="16"
+                                           TextColor="{StaticResource Purple1}"
+                                           VerticalTextAlignment="Center"/>
+                                    <Label Text="Reread" TextColor="#4B5563" FontSize="12"/>
+                                </HorizontalStackLayout>
+                            </Border>
+
+                        </Grid>
+                    </VerticalStackLayout>
+                </Border>
+
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Latest Reads" Style="{StaticResource H2}"/>
+                    <Label Text="My latest book playlist" Style="{StaticResource Caption}"/>
+
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="14">
+                        <Border Grid.Column="0"
+                                BackgroundColor="White"
+                                Stroke="{StaticResource CardStroke}"
+                                StrokeThickness="1"
+                                StrokeShape="RoundRectangle 18"
+                                Padding="12"
+                                Shadow="{StaticResource CardShadow}">
+                            <VerticalStackLayout Spacing="12">
+                                <Border BackgroundColor="#E8ECFF"
+                                        Stroke="#D9DFFF"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 16"
+                                        HeightRequest="110"/>
+                                <VerticalStackLayout Spacing="2" Padding="4,0,4,4">
+                                    <Label Text="Book Title" FontSize="12" FontAttributes="Bold" TextColor="{StaticResource TitleText}"/>
+                                    <Label Text="Author" FontSize="11" TextColor="{StaticResource MutedText}"/>
+                                    <Label Text="Date" FontSize="11" TextColor="{StaticResource MutedText}"/>
+                                </VerticalStackLayout>
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <Border Grid.Column="1"
+                                BackgroundColor="White"
+                                Stroke="{StaticResource CardStroke}"
+                                StrokeThickness="1"
+                                StrokeShape="RoundRectangle 18"
+                                Padding="12"
+                                Shadow="{StaticResource CardShadow}">
+                            <VerticalStackLayout Spacing="12">
+                                <Border BackgroundColor="#E8ECFF"
+                                        Stroke="#D9DFFF"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 16"
+                                        HeightRequest="110"/>
+                                <VerticalStackLayout Spacing="2" Padding="4,0,4,4">
+                                    <Label Text="Book Title" FontSize="12" FontAttributes="Bold" TextColor="{StaticResource TitleText}"/>
+                                    <Label Text="Author" FontSize="11" TextColor="{StaticResource MutedText}"/>
+                                    <Label Text="Date" FontSize="11" TextColor="{StaticResource MutedText}"/>
+                                </VerticalStackLayout>
+                            </VerticalStackLayout>
+                        </Border>
+                    </Grid>
+                </VerticalStackLayout>
+
+                <BoxView HeightRequest="40" Opacity="0"/>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <Border Grid.Row="2"
+                HeightRequest="56"
+                Padding="0"
+                StrokeThickness="0">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#7A3FF2" Offset="0" />
+                    <GradientStop Color="#8A2BE2" Offset="1" />
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid Padding="14,10"
+                  ColumnDefinitions="Auto,*,Auto"
+                  VerticalOptions="Center">
+
+                <Border WidthRequest="40"
+                        HeightRequest="40"
+                        Stroke="#CDBBFF"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 12"
+                        BackgroundColor="#E9E2FF"
+                        VerticalOptions="Center" />
+
+                <Grid Grid.Column="1"
+                      Margin="12,0"
+                      ColumnDefinitions="Auto,Auto"
+                      VerticalOptions="Center">
+
+                    <Label Text="Book Title"
+                           TextColor="White"
+                           FontSize="12"
+                           FontAttributes="Bold"
+                           VerticalTextAlignment="Center"
+                           Margin="0,0,10,0"/>
+
+                    <BoxView Grid.Column="1"
+                             WidthRequest="1"
+                             HeightRequest="22"
+                             BackgroundColor="#FFFFFF"
+                             Opacity="0.18"
+                             VerticalOptions="Center"
+                             Margin="0,0,10,0"/>
+
+                    <Label Grid.Column="1"
+                           Text="description"
+                           TextColor="#E9E2FF"
+                           FontSize="12"
+                           VerticalTextAlignment="Center"
+                           Margin="10,0,0,0"/>
+                </Grid>
+
+                <Grid Grid.Column="2"
+                      WidthRequest="90"
+                      HeightRequest="44"
+                      VerticalOptions="Center">
+                    <Border StrokeThickness="0"
+                            StrokeShape="RoundRectangle 14"
+                            BackgroundColor="#00000000"
+                            Shadow="{Shadow Brush=#5A1BFF, Offset='0,10', Radius=18, Opacity=0.35}" />
+
+                    <Border StrokeThickness="0"
+                            StrokeShape="RoundRectangle 14"
+                            WidthRequest="50"
+                            HeightRequest="42"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#7D3CFF" Offset="0" />
+                                <GradientStop Color="#6D30FA" Offset="0.45" />
+                                <GradientStop Color="#4B1FD6" Offset="1" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+
+                        <Grid>
+                            <Border Stroke="#FFFFFF"
+                                    StrokeThickness="1"
+                                    Opacity="0.12"
+                                    StrokeShape="RoundRectangle 14" />
+
+                            <Label Text="{fluent:Fluent Icon=Play28}"
+                                   FontSize="18"
+                                   TextColor="White"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center" />
+                        </Grid>
+                    </Border>
+                </Grid>
+
+            </Grid>
+        </Border>
+
+        <views:BottomNavigation Grid.Row="3" />
+
+        <!--<Grid Grid.Row="3"
+              BackgroundColor="White"
+              Padding="18,10"
+              ColumnDefinitions="*,*,*,*"
+              HeightRequest="70">
+
+            <VerticalStackLayout Grid.Column="0" Spacing="4" HorizontalOptions="Center">
+                <Label Text="{fluent:Fluent Icon=Home28}"
+                       FontSize="24"
+                       TextColor="{StaticResource Purple1}"
+                       HorizontalTextAlignment="Center"/>
+                <Label Text="Home" FontSize="10" TextColor="{StaticResource Purple1}"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Column="1" Spacing="4" HorizontalOptions="Center">
+                <Label Text="{fluent:Fluent Icon=Tag32}"
+                       FontSize="24"
+                       TextColor="#9CA3AF"
+                       HorizontalTextAlignment="Center"/>
+                <Label Text="Tags" FontSize="10" TextColor="#9CA3AF"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Grid.Column="2" Spacing="4" HorizontalOptions="Center">
+                <Label Text="{fluent:Fluent Icon=Add24}"
+             FontSize="24"
+             TextColor="#9CA3AF"
+             HorizontalTextAlignment="Center"/>
+                <Label Text="Add Tag" FontSize="10" TextColor="#9CA3AF"/>
+            </VerticalStackLayout>
+            
+
+            <VerticalStackLayout Grid.Column="3" Spacing="4" HorizontalOptions="Center">
+                <Label Text="{fluent:Fluent Icon=Settings32}"
+                       FontSize="24"
+                       TextColor="#9CA3AF"
+                       HorizontalTextAlignment="Center"/>
+                <Label Text="Settings" FontSize="10" TextColor="#9CA3AF"/>
+            </VerticalStackLayout>
+        </Grid>-->
+
+    </Grid>
+</ContentPage>

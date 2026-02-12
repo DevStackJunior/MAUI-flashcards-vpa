@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MAUI-Flashcards-vpa</name>
+    </assembly>
+    <members>
+        <member name="T:MAUI_Flashcards_vpa.ViewModels.BottomNavigationViewModel">
+            <summary>
+            1. Déclenchement événement : clique sur "Settings".
+            2. DESTRUCTION (instance actuelle): 
+            2.1 Home     | MainPage.xaml
+            2.1 ViewModel| BottomNavigationViewModel.cs 
+            détruits
+            2.2 Libération de la mémoire
+            3. CREATION (nouvelle instance): 
+            3.1 Pages     | Settings.xaml
+            3.1 ViewModels| BottomNavigationViewModel en lui passant la chaîne "Settings".
+            3.2 
+            4. CALCULE : 
+            Le constructeur exécute la comparaison : 
+            4.1 Est-ce que 'Settings' == 'Home' ? Non -> Gris. 
+            4.2 Est-ce que 'Tags' == 'Settings' ? Non -> Gris.
+            ...
+            4.3 Est-ce que 'Settings' == 'Settings' ? Oui -> Violet.
+            5. AFFICHAGE : 
+            5.1 Views    | BottomNavigation.xaml (Le XAML lit ces valeurs une seule fois et dessine la barre avec les nouvelles couleurs).
+            </summary>
+        </member>
+        <member name="M:MAUI_Flashcards_vpa.ViewModels.BottomNavigationViewModel.#ctor(System.String)">
+            <summary>
+            Etablit 2 couleurs de référence, vérifie l'état statique de sélection d'un onglet : 
+                - 1 couleur par défaut pour les onglets non sélectionnés
+                - 1 couleur pour un onglet activé
+            </summary>
+            <param name="activeTab">propriété statique de sélection de l'onglet de navigation sélectionné</param>
+        </member>
+        <member name="T:MAUI_Flashcards_vpa.Resource">
+            <summary>
+            Android Resource Designer class.
+            Exposes the Android Resource designer assembly into the project Namespace.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:fluent="clr-namespace:MauiIcons.Fluent;assembly=MauiIcons.Fluent"
+    xmlns:views="clr-namespace:MAUI_Flashcards_vpa.Views"
+    x:Class="MAUI_Flashcards_vpa.Views.BottomNavigation">
+    <!--
+    BINDINGS REFERENCE 
+    source : "ViewModels/BottomNavigationViewModel.cs"
+    TextColor : 2 couleurs maximum sont set par défaut dans le ViewModels pour différencier la sélection d'un onglet
+    Command :  Déclenche le déplacement sur route statique déterminée dans fichier "ViewModels/BottomNavigationViewModel.cs"
+    -->
+    <Grid BackgroundColor="White"
+          Padding="18,10"
+          ColumnDefinitions="*,*,*,*"
+          HeightRequest="70">
+
+        <!-- Home -->
+        <VerticalStackLayout Grid.Column="0"
+                             Spacing="4"
+                             HorizontalOptions="Center">
+            <Label Text="{fluent:Fluent Icon=Home28}"
+                   FontSize="24"
+                   TextColor="{Binding HomeColor}"
+                   HorizontalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoHomeCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Home"
+                   FontSize="10"
+                   TextColor="{Binding HomeColor}" />
+        </VerticalStackLayout>
+
+        <!-- Tags -->
+        <VerticalStackLayout Grid.Column="1"
+                             Spacing="4"
+                             HorizontalOptions="Center">
+            <Label Text="{fluent:Fluent Icon=Tag32}"
+                   FontSize="24"
+                   TextColor="{Binding TagsColor}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoTagsCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Tags"
+                   FontSize="10"
+                   TextColor="{Binding TagsColor}" />
+        </VerticalStackLayout>
+
+        <!-- Add Tag -->
+        <VerticalStackLayout Grid.Column="2"
+                             Spacing="4"
+                             HorizontalOptions="Center">
+            <Label Text="{fluent:Fluent Icon=Add24}"
+                   FontSize="24"
+                   TextColor="{Binding AddColor}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoAddTagCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Add Tag"
+                   FontSize="10"
+                   TextColor="{Binding AddColor}" />
+        </VerticalStackLayout>
+
+        <!-- Settings -->
+        <VerticalStackLayout Grid.Column="3"
+                             Spacing="4"
+                             HorizontalOptions="Center">
+            <Label Text="{fluent:Fluent Icon=Settings32}"
+                   FontSize="24"
+                   TextColor="{Binding SettingsColor}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoSettingsCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Settings"
+                   FontSize="10"
+                   TextColor="{Binding SettingsColor}" />
+        </VerticalStackLayout>
+
+    </Grid>
+</ContentView>

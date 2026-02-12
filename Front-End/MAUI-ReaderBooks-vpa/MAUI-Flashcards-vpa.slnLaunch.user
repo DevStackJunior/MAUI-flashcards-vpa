@@ -1,0 +1,12 @@
+[
+  {
+    "Name": "Nouveau profil",
+    "Projects": [
+      {
+        "Path": "MAUI-Flashcards-vpa\\MAUI-Flashcards-vpa.csproj",
+        "Action": "Start",
+        "DebugTarget": "Pixel 7 - API 35 (Android 15.0 - API 35)"
+      }
+    ]
+  }
+]
